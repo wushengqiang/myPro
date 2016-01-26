@@ -16,7 +16,7 @@
   <mvc:annotation-driven />
   
   <!-- 启动扫描所有的controller 只扫描mvc，不扫描service -->
-  <context:component-scan base-package="com.officeTool.myTask.action">
+  <context:component-scan base-package="com.officeTool.myTask.*">
     <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
   </context:component-scan> 
   <!-- 允许对静态资源文件的访问 -->   
@@ -27,7 +27,7 @@
   <!-- 定义跳转的文件的前后缀 -->  
   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
     <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>  
-    <property name="prefix" value="/WEB-INF/jsp/" />  
+    <property name="prefix" value="/resources/" />  
     <property name="suffix" value=".jsp" />  
   </bean>
   

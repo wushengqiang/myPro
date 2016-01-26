@@ -82,4 +82,8 @@
       <tx:method name="*" propagation="REQUIRED" read-only="true" rollback-for="java.lang.Exception"/>  
     </tx:attributes>
   </tx:advice>
+  
+  <aop:config proxy-target-class="true"> 
+	<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.officeTool.myTask.service.*.*(..))" /> 
+  </aop:config>
 </beans>
