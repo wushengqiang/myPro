@@ -227,37 +227,37 @@ User user = (User)session.getAttribute("user");
 					<div class="userbox">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<div class="profile-info">
-								<span class="name">John Smith Doe</span>
+								<span class="name"><%=user.getName() %></span>
 								<span class="role">Developer</span>
-							</div>
+							</div>			
 							<i class="fa custom-caret"></i>
 						</a>
 						<div class="dropdown-menu">
 							<ul class="list-unstyled">
-								<li class="dropdown-menu-header bk-bg-white bk-margin-top-15">
+								<li class="dropdown-menu-header bk-bg-white bk-margin-top-15">						
 									<div class="progress progress-xs  progress-striped active">
 										<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
 											60%
 										</div>
-									</div>
+									</div>							
+								</li>	
+								<li>
+									<a href="page-profile.html"><i class="fa fa-user"></i>个人信息</a>
 								</li>
 								<li>
-									<a href="page-profile.html"><i class="fa fa-user"></i> Profile</a>
+									<a href="#"><i class="fa fa-wrench"></i> 设置</a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-wrench"></i> Settings</a>
+									<a href="page-invoice"><i class="fa fa-calendar"></i>我的提醒</a>
 								</li>
 								<li>
-									<a href="page-invoice"><i class="fa fa-usd"></i> Payments</a>
+									<a href="#"><i class="fa fa-file"></i> 文档</a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-file"></i> File</a>
-								</li>
-								<li>
-									<a href="page-login.html"><i class="fa fa-power-off"></i> Logout</a>
+									<a href="page-login.html"><i class="fa fa-power-off"></i> 退出</a>
 								</li>
 							</ul>
-						</div>
+						</div>						
 					</div>
 					<!-- End Userbox -->
 				</div>
@@ -278,44 +278,37 @@ User user = (User)session.getAttribute("user");
 							<img src="${ctx}/resources/assets/img/logo.png" class="img-responsive" alt="" />
 						</div>
 						<!-- Sidebar Menu-->
-						<div class="sidebar-menu">
+						<div class="sidebar-menu">						
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-sidebar">
-									<div class="panel-body text-center">
+									<div class="panel-body text-center">								
 										<div class="bk-avatar">
 											<img src="${ctx}/resources/assets/img/avatar.jpg" class="img-circle bk-img-60" alt="" />
 										</div>
 										<div class="bk-padding-top-10">
-											<i class="fa fa-circle text-success"></i> <small>Administrator</small>
+											<i class="fa fa-circle text-success"></i> <small><%=user.getName() %></small>
 										</div>
 									</div>
 									<div class="divider2"></div>
-									<li>
+									<li class="active">
 										<a href="index.html">
-											<i class="fa fa-laptop" aria-hidden="true"></i><span>Dashboard</span>
+											<i class="fa fa-laptop" aria-hidden="true"></i><span>工作台</span>
 										</a>
 									</li>
 									<li>
 										<a href="page-inbox.html">
 											<span class="pull-right label label-primary">165</span>
-											<i class="fa fa-envelope" aria-hidden="true"></i><span>Mail</span>
+											<i class="fa fa-envelope" aria-hidden="true"></i><span>站内信</span>
 										</a>
 									</li>
 									<li class="nav-parent">
 										<a>
-											<i class="fa fa-copy" aria-hidden="true"></i><span>Pages</span>
+											<i class="fa fa-copy" aria-hidden="true"></i><span>用户管理</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="page-activity.html"><span class="text"> Activity</span></a></li>
-											<li><a href="page-invoice.html"><span class="text"> Invoice</span></a></li>
-											<li><a href="page-profile.html"><span class="text"> Profile</span></a></li>
-											<li><a href="page-pricing-tables.html"><span class="text"> Pricing Tables</span></a></li>
-											<li><a href="page-404.html"><span class="text"> 404</span></a></li>
-											<li><a href="page-500.html"><span class="text"> 500</span></a></li>
-											<li><a href="page-lockscreen.html"><span class="text"> LockScreen1</span></a></li>
-											<li><a href="page-lockscreen2.html"><span class="text"> LockScreen2</span></a></li>
-											<li><a href="page-login.html"><span class="text"> Login Page</span></a></li>
-											<li><a href="page-register.html"><span class="text"> Register Page</span></a></li>
+											<li><a href="${ctx}/resources/jsp/department.jsp"><span class="text">部门管理</span></a></li>
+											<li><a href="page-invoice.html"><span class="text"> 角色管理</span></a></li>						
+											<li><a href="page-profile.html"><span class="text"> 用户信息管理</span></a></li>								
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -330,7 +323,7 @@ User user = (User)session.getAttribute("user");
 											<li><a href="form-editors.html"><span class="text"> Editors</span></a></li>
 										</ul>
 									</li>
-									<li class="active">
+									<li>
 										<a href="table.html">
 											<i class="fa fa-table" aria-hidden="true"></i><span>Tables</span>
 										</a>
@@ -416,7 +409,7 @@ User user = (User)session.getAttribute("user");
 						<div class="pull-left">
 							<ol class="breadcrumb visible-sm visible-md visible-lg">
 								<li><a href="index.html"><i class="icon fa fa-home"></i>Home</a></li>
-								<li class="active"><i class="fa fa-table"></i>Tables</li>
+								<li class="active"><i class="fa fa-table"></i>部门管理</li>
 							</ol>
 						</div>
 						<div class="pull-right">
