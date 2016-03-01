@@ -6,6 +6,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.officeTool.myTask.service.OraginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,7 +28,10 @@ public class UserController {
 	
 	@Autowired
 	private MD5Utils md5;
-	
+
+	@Autowired
+	private OraginService oraginService;
+
 	/**
 	 * 登录
 	 */
@@ -47,7 +51,9 @@ public class UserController {
 		password=md5.digest(password);
 		
 		User user = userService.login(userName, password);
-		
+
+		oraginService.queryOragins();
+
 		if(user==null){
 			
 			return new ModelAndView("/login").addObject("failStr", "用户名或者密码错误！！！");

@@ -21,7 +21,6 @@ public class BaseDaoImpl<T>  implements BaseDao<T> {
 	/* (non-Javadoc)
 	 * @see com.officeTool.myTask.dao.BaseDao#save(java.lang.Object)
 	 */
-	@Override
 	public boolean save(T entity) {
 		
 		boolean flag=false;
@@ -36,7 +35,6 @@ public class BaseDaoImpl<T>  implements BaseDao<T> {
 		return flag;
 	}
 
-	@Override
 	public void delete(String[] ids) {
 		
 		try{
@@ -53,7 +51,6 @@ public class BaseDaoImpl<T>  implements BaseDao<T> {
 		
 	}
 
-	@Override
 	public void update(T entity) {
 		
 		try{
@@ -67,7 +64,6 @@ public class BaseDaoImpl<T>  implements BaseDao<T> {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public T find(Long id) {
 		
 		T entity=null;
@@ -85,7 +81,6 @@ public class BaseDaoImpl<T>  implements BaseDao<T> {
 		return entity;
 	}
 
-	@Override
 	public void saveOrUpdate(T entity) {
 		try{
 			

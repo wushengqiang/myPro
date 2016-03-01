@@ -23,8 +23,7 @@ public class UserDaoImpl<T> extends BaseDaoImpl<T> implements UserDao<T> {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	
-	@Override
+
 	public User login(String userName, String password) {
 		
 		 User user=null;
